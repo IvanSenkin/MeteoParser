@@ -1,0 +1,59 @@
+﻿<Window x:Class="MeteoParser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MeteoParser"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="listbox" SelectionChanged="listbox_SelectionChanged" HorizontalContentAlignment="Center" VerticalAlignment="Center">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding DATE}" FontSize="15" Background="LightGray"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ListBox x:Name="listbox2" Grid.Column="1" HorizontalContentAlignment="Center" VerticalAlignment="Center">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding TEMPERATURE}" FontSize="15" Background="LightGray"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+
+        <ListBox x:Name="listbox3" Grid.Column="1" Grid.Row="1" HorizontalContentAlignment="Center" VerticalAlignment="Center">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <TextBlock Text="{Binding PRESSURE}" FontSize="15" Background="LightGray"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        <ListBox x:Name="listbox1" Grid.Row="1" HorizontalContentAlignment="Center" VerticalAlignment="Center">
+        <ListBox.ItemTemplate>
+            <DataTemplate>
+                <StackPanel>
+                        <TextBlock Text="{Binding WIND}" FontSize="15" Background="LightGray"/>
+                    </StackPanel>
+            </DataTemplate>
+        </ListBox.ItemTemplate>
+        </ListBox>
+    
+    </Grid>
+</Window>
